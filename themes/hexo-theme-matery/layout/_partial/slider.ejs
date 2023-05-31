@@ -1,0 +1,128 @@
+<div class="slide-container">  
+  <div class="container" style="background-color: white;">
+    <div class="swiper mySwiper" style="background-color: white; font-size: 80%;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="/tags/比特">比特</a></div>
+        <div class="swiper-slide"><a href="/tags/乙太">乙太</a></div>
+        <div class="swiper-slide"><a href="/tags/Defi">Defi</a></div>
+        <div class="swiper-slide"><a href="/tags/區塊鏈">區塊鏈</a></div>
+        <div class="swiper-slide"><a href="/tags/GameFi">GameFi</a></div>
+        <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div>
+        <div class="swiper-slide"><a href="/tags/比特">比特</a></div>
+        <div class="swiper-slide"><a href="/tags/區塊鏈">區塊鏈</a></div>
+        <div class="swiper-slide"><a href="/tags/NFT">NFT</a></div> 
+      </div>
+      <div class="swiper-button-next" style="right: 14px;">       
+        <i
+          class="fa-solid fa-chevron-right"
+          style="color: black;position: relative;width: 100%;top: 3px;right: -19px;background-color: white; display:flex; align-items: center; font-size: 16px;"
+          id="prev"
+        ></i>
+      </div>
+      <div class="swiper-button-prev" style="left: 14px;">
+        <i
+          class="fa-solid fa-chevron-left"
+          style="color: black;position: relative;width: 100%;top: 3px;left: -14px;background-color: white; display:flex; align-items: center; font-size: 16px;"
+          id="prev"
+        ></i>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+  //輪播套件js
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    slidesPerGroup: 3,
+    spaceBetween: -60,
+    initialSlide: 0,
+    loop: true,
+    loopFillGroupWithBlank: false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      400: {
+        slidesPerView: 5,
+      },
+      600: {
+        slidesPerView: 7,
+      },
+      800: {
+        slidesPerView: 8,
+      },
+      1000: {
+        slidesPerView: 9,
+      }
+  }
+  });
+
+  var width = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
+  var height = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight;
+  //show how many label
+  
+  
+  count = Math.floor(width*0.9/200);
+  space = (width*0.85-200*count);
+
+  swiper2_touch = width > 601 ? true : false
+  
+  const swiper2 = new Swiper(".mySwiper2", {
+      slidesPerView: 'auto',
+      spaceBetween: 0,
+      slidesPerGroup: count,
+      centeredSlides: false,
+      allowTouchMove: swiper2_touch,
+      autoplay:true,
+      autoplay: {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: true,
+      },
+      // loop: true,
+      loopFillGroupWithBlank: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },      
+  });
+
+  const btc_block_swiper = new Swiper(".myBtcSwiper", {
+      slidesPerView: 'auto',
+      spaceBetween: -20,
+      slidesPerGroup: 1,
+      loop: false,
+      loopFillGroupWithBlank: false,
+      updateOnWindowResize: false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      // centeredSlides: false,
+      },
+  });
+
+</script>
+
+<style>
+  .mySwiper .swiper-slide {
+    width: fit-content;
+    left: 40px;
+  }
+</style>

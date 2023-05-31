@@ -1,0 +1,80 @@
+<footer class="page-footer white">
+    <div class="container white footer-nav">
+        <div class="pic">
+            <img src="<%- theme.jsDelivr.url %><%- url_for(theme.logo) %>" class="logo-img" alt="LOGO">
+        </div>
+        <div class="footer-items" style="width: auto">          
+            <div class="footer-item" style="width: auto; color: black;"><a href="/">合作夥伴</a></div>
+            <div class="footer-item" style="width: auto; color: black;"><a href="/">免責聲明</a></div>
+            <div class="footer-item" style="width: auto; color: black;"><a href="/">隱私政策</a></div>
+        </div>
+    </div>
+    <!-- 第二區 -->
+    <div class="footer-copyright"  >
+        <div class="container copyright-block">
+            <!-- <div class="row">                 -->
+                <div class="copyright-text">
+                    © Bitcoin.zh  2140                    
+                </div>
+                <!-- <div class="social-link"><%- partial('_partial/social-link-white') %></div>      -->
+            <!-- </div> -->
+        </div>
+    </div>
+    <div class="footer-nfts white"  style="display: none">
+        <div class="container">
+            <div class="row">
+                <h1 class="nfts-heading">精選 NFT 欣賞</h1>
+            </div>
+            <div class="row nft-rows">
+                <div class="col s12 m6 l6 nft-row">
+                    <div class="col s5 m6 nftimg">
+                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.nftLeft) %>" class="responsive-img" alt="nftIMG">
+                    </div>
+                    <div class="col s7 m6 footer-info">
+                        <h3>網站名稱</h3>
+                        <a class="waves-effect waves-light btn black white-text">官方網站</a>
+                        <a class="waves-effect waves-light btn black white-text btn-right">我要購買</a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l6 nft-row">
+                    <div class="col s5 m6 nftimg">
+                        <img src="<%- theme.jsDelivr.url %><%- url_for(theme.nftRight) %>" class="responsive-img" alt="nftIMG">
+                    </div>
+                    <div class="col s7 m6 footer-info">
+                        <h3>網站名稱</h3>
+                        <a class="waves-effect waves-light btn black white-text">官方網站</a>
+                        <a class="waves-effect waves-light btn black white-text btn-right">我要購買</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row"></div>
+            <!-- <div class="row coin-block">
+                <div class="coin-left">
+                    <h2 class="nfts-heading">門羅幣挖礦</h2>     
+                </div>                
+                <div class="coin-right">
+                    <h4 class="nfts-heading">Github 開源碼連結</h4>
+                    <label class="toggle">
+                        <input type="checkbox" class="open-source-btn">
+                        <span class="onOff-btn round"></span>	
+                    </label>
+                </div>
+                <hr>
+            </div> -->
+        </div>
+        <div id="bottom-ad" class="ad-block"  style="display: none">
+            <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
+            <button id="bottom-closeBtn" class="ad-close"><img src="/medias/ad-close.svg"></button>
+        </div>
+    </div>
+    <!--移除底部廣告-->
+    <script>
+        const bottomCloseBtn=document.getElementById('bottom-closeBtn')
+        const bottomAD=document.getElementById('bottom-ad') 
+
+        bottomCloseBtn.addEventListener('click',()=>{
+            bottomAD.remove() 
+        }) 
+    </script>
+</footer>
+<!-- <div class="progress-bar"></div> -->

@@ -1,0 +1,409 @@
+<!-- <header class="navbar-fixed"> -->
+  <header class="navbar">
+    <div id="header-ad" class="ad-block" style="display: none">
+      <span class="ad-text">廣告廣告廣告廣告廣告廣告廣告廣告</span>
+      <button id="header-closeBtn" class="ad-close">
+        <img src="/medias/ad-close.svg" />
+      </button>
+    </div>
+    <nav id="headNav" class="bg-color white nav-transparent" style="height: auto">
+      <div class="bitcoin-price lighten-4">
+        <div class="btc-price">
+          <div class="swiper-container" style="height: 35px">
+            <div class="container">
+              <div class="swiper myBtcSwiper">
+                <div class="swiper-wrapper">
+                  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                  <!-- 日期 -->
+                  <div
+                    class="swiper-slide swiper-btc-block-date"
+                    style="height: 60px;font-size: 80%;"
+                  >
+                    <a href="">
+                      <span style="color: black">
+                        <img
+                          src="/medias/icon-calender-black.png"
+                          class="responsive-img"
+                          alt="iconCal"
+                          style="
+                            margin-top: 20px;
+                            height: 14px;
+                            width: 14px;
+                            display: inline-block;
+                          "
+                        />
+                        <span id="btc-block-date" style="display: inline-block">
+                          <script>
+                            var today = new Date();
+                            var dd = String(today.getDate()).padStart(2, "0");
+                            var mm = String(today.getMonth() + 1).padStart(
+                              2,
+                              "0"
+                            ); //January is 0
+                            var yyyy = today.getFullYear();
+                            today = yyyy + "/" + mm + "/" + dd;
+                            document.getElementById("btc-block-date").innerHTML =
+                              today;
+                          </script>
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                  <!-- BTC價格 -->
+                  <div
+                    class="swiper-slide swiper-btc-block-value"
+                    style="height: 60px; max-width: 169px;font-size: 12px;"
+                  >
+                    <a href="">
+                      <span
+                        id="header_cropto_name"
+                        style="color: black; margin-right: 0px"
+                      >
+                        ₿
+                      </span>
+  
+                      <span style="color: black">
+                        =
+                        <span
+                          id="header_crypto_price"
+                          style="display: inline-block; margin: 0px;font-size: 12px;"
+                        >
+                        </span>
+                        USD
+                      </span>
+                    </a>
+                  </div>
+                  <!-- 區塊高度 -->
+                  <div
+                    class="swiper-slide swiper-btc-block-high"
+                    style="height: 60px; left: -30px"
+                  >
+                    <a href="">
+                      <span style="width: 360px">
+                        <!-- <span style="font-size: 24px; font-weight: 50; top: -3px; position: relative;color: black;">|</span>  -->
+                        <img
+                          src="/medias/icon-block.png"
+                          class="responsive-img"
+                          alt="iconCal"
+                          style="
+                            margin-top: 20px;
+                            height: 14px;
+                            width: 14px;
+                            display: inline-block;
+                          "
+                        />
+  
+                        <span
+                          id="header_crypto_blockhigh"
+                          style="
+                            color: black;
+                            display: inline-block;
+                            width: 60px;
+                            margin: 0px;
+                            font-size: 80%;
+                          "
+                        >
+                        </span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="stock-price">
+            <div class="swiper-container" style="height: 55px; font-size: 80%;">
+              <div class="swiper mySwiper2" style="height: 60px">
+                <div class="swiper-wrapper" style="line-height: 60px">
+                  <!-- get data from api by ejs axio -->
+                  <% for (var i =1; i <=10; i++ ) { %>
+                  <div class="swiper-slide" style="width: auto; padding: 0 15px">
+                    <span id="name-<%= i %>"></span>
+                    <span id="price-<%= i %>"></span>
+                    <i
+                      id="price-<%= i %>_gain_img"
+                      class="fa-solid text-darken-3"
+                    ></i>
+                    <span id="price-<%= i %>_gain_text" class="text-darken-3">
+                      <span id="price-<%= i %>_gain"></span>
+                    </span>
+                  </div>
+                  <% } %>
+  
+                  <!-- <% for (var i = 0; i < 3;  i++ ) { %>
+                                      <div class="swiper-slide">
+                                          <span id="name-empty" ></span>
+                                          <span id="price-empty"></span>                                    
+                                      </div>                                                     
+                                  <% } %>                                 -->
+  
+                  <!-- 從 api.fishdogeweb.store 取得資料，即 api.py -->
+                  <script type="module">
+                    import { getStock } from "/js/crypto.js";
+                    import { setPriceGain } from "/js/crypto.js";
+                    let getDataurl = "<%- theme.stock.getCryptoUrl%>";
+                    let getStockurl = "<%- theme.stock.getStockUrl%>";
+                    const link = [
+                      {
+                        name: "bitcoin",
+                        coin: "BTC",
+                      },
+                      {
+                        name: "ethereum",
+                        coin: "ETH",
+                      },
+                      {
+                        name: "ripple",
+                        coin: "XRP",
+                      },
+                      {
+                        name: "binance-peg-polkadot",
+                        coin: "DOT",
+                      },
+                      {
+                        name: "bitcoin-cash",
+                        coin: "BCH",
+                      },
+                      {
+                        name: "litecoin",
+                        coin: "LTC",
+                      },
+                      {
+                        name: "cardano",
+                        coin: "ADA",
+                      },
+                      {
+                        name: "solana",
+                        coin: "SOL",
+                      },
+                      {
+                        name: "aptos",
+                        coin: "APT",
+                      },
+                      {
+                        name: "mask-network",
+                        coin: "MASK",
+                      },
+                    ];
+  
+                    // 自動生成漲跌幅
+                    // for(let i = 0; i < 10; i++){
+                    //     axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`)
+                    //     .then((gain_res) => {
+                    //             let data = JSON.parse(JSON.stringify(gain_res.data));
+  
+                    //     })
+                    //     .catch((error) => {
+                    //         console.log(error);
+                    //     });
+                    // }
+                    // get BTC block height
+                    function getBlockHeight() {
+                      // https://chain.api.btc.com/v3/block/latest
+                      axios
+                        .get("https://chain.api.btc.com/v3/block/latest")
+                        .then((response) => {
+                          let data = JSON.parse(JSON.stringify(response.data));
+                          document.cookie = `height=${data["data"]["height"]}`;
+                          document.getElementById(
+                            "header_crypto_blockhigh"
+                          ).innerHTML = data["data"]["height"];
+                        })
+                        .catch((error) => {
+                          console.log(error);
+                          getCookie();
+                        });
+                    }
+  
+                    // 自動生成交易對
+                    function autoSpawnCryto() {
+                      let count = 0;
+                      getBlockHeight();
+                      for (let i = 0; i < 10; i++) {
+                        axios
+                          .get(
+                            `https://api.coingecko.com/api/v3/simple/price?ids=${link[i].name}&vs_currencies=usd&include_24hr_change=true`
+                          )
+                          .then((response) => {
+                            let data = JSON.parse(JSON.stringify(response.data));
+                            document.cookie = `gian${i}=${
+                              Math.round(
+                                (data[link[i].name].usd_24h_change +
+                                  Number.EPSILON) *
+                                  100
+                              ) / 100
+                            };`;
+                            document.cookie = `value${i}=${
+                              data[link[i].name].usd
+                            };`;
+                            count++;
+                            if (count == 9) {
+                              getCookie();
+                            }
+                          })
+                          .catch((error) => {
+                            let data;
+                            let url = getDataurl + `coin=${link[i].coin}/USDT`;
+                            // url need to be changed
+                            axios
+                              .get(url)
+                              .then((response) => {
+                                data = JSON.parse(JSON.stringify(response.data));
+                                document.getElementById(
+                                  `name-${i + 1}`
+                                ).innerHTML = `${link[i].coin}/USDT`;
+                                document.getElementById(
+                                  `price-${i + 1}`
+                                ).innerHTML = data.result.price;
+                                return data;
+                              })
+                              .catch((error) => {
+                                data = error;
+                                console.log(error);
+                                getCookie();
+                              });
+                            data = error;
+                            console.log(error);
+                            getCookie();
+                            return data;
+                          });
+                        document.getElementById(
+                          `name-${i + 1}`
+                        ).innerHTML = `${link[i].coin}/USDT`;
+                      }
+                    }
+  
+                    function getCookie() {
+                      var Data = document.cookie.split("; ");
+                      Data.forEach((element) => {
+                        if (element.substring(0, 4) == "gian") {
+                          let gain = parseFloat(element.split("=")[1]);
+                          if (gain > 0) {
+                            // document
+                            //   .getElementById(
+                            //     `price-${parseInt(element[4]) + 1}_gain_img`
+                            //   )
+                            //   .classList.add("fa-caret-up");
+                            // document
+                            //   .getElementById(
+                            //     `price-${parseInt(element[4]) + 1}_gain_img`
+                            //   )
+                            //   .classList.add("green-text");
+                            document
+                              .getElementById(
+                                `price-${parseInt(element[4]) + 1}_gain_text`
+                              )
+                              .classList.add("green-text");
+                          } else if (gain == 0) {
+                          } else {
+                            // document
+                            //   .getElementById(
+                            //     `price-${parseInt(element[4]) + 1}_gain_img`
+                            //   )
+                            //   .classList.add("fa-caret-down");
+                            // document
+                            //   .getElementById(
+                            //     `price-${parseInt(element[4]) + 1}_gain_img`
+                            //   )
+                            //   .classList.add("red-text");
+                            document
+                              .getElementById(
+                                `price-${parseInt(element[4]) + 1}_gain_text`
+                              )
+                              .classList.add("red-text");
+                            gain *= -1;
+                          }
+                          // document.getElementById(
+                          //   `price-${parseInt(element[4]) + 1}_gain`
+                          // ).innerHTML = gain + "%";
+                        } else if (element.substring(0, 5) == "value") {
+                          document.getElementById(
+                            `price-${parseInt(element[5]) + 1}`
+                          ).innerHTML = element.split("=")[1];
+                          if (element[5] == "0") {
+                            document.getElementById(
+                              "header_crypto_price"
+                            ).innerHTML = element.split("=")[1];
+                          }
+                        } else if (element.substring(0, 6) == "height") {
+                          document.getElementById(
+                            "header_crypto_blockhigh"
+                          ).innerHTML = element.split("=")[1];
+                        }
+                      });
+                    }
+  
+                    //init
+                    autoSpawnCryto();
+                    getCookie();
+                    setTimeout(function () {
+                      autoSpawnCryto();
+                    }, 30000);
+                  </script>
+                </div>
+                <div class="swiper-button-next">
+                  <i
+                    class="fa-solid fa-chevron-right swiper-button-right top10swiper"
+                    style="color: black; background-color: white;"
+                    id="next"
+                  ></i>
+                </div>
+                <span class="fa-solid"></span>
+                <div class="swiper-button-prev" style="z-index: 999">
+                  <i
+                    class="fa-solid fa-chevron-left swiper-button-left top10swiper"
+                    style="color: black; background-color: white;"
+                    id="prev"
+                  ></i>
+                </div>
+  
+                <style>
+                  .swiper-button-right {
+                    color: white;
+                    position: relative;
+                    width: 100%;
+                    top: 3px;
+                    right: -19px;
+                    text-align: center;
+                    background-color: rgb(247, 247, 247);
+                  }
+                  .swiper-button-left {
+                    color: black;
+                    position: relative;
+                    width: 100%;
+                    top: 3px;
+                    left: -14px;
+                    text-align: center;
+                    background-color: rgb(247, 247, 247);
+                  }
+                  @media screen and (max-width: 610px) {
+                    .swiper-button-right {
+                      top: 4px;
+                    }
+                    .swiper-button-left {
+                      top: 4px;
+                    }
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--移除頂部廣告-->
+      <script>
+        const headerCloseBtn = document.getElementById("header-closeBtn");
+        const headerAD = document.getElementById("header-ad");
+  
+        headerCloseBtn.addEventListener("click", () => {
+          headerAD.remove();
+        });
+      </script>
+      <%- partial('_partial/navigation') %> <%- partial('_partial/slider') %> <%
+      if (theme.githubLink && theme.githubLink.enable) { %> <%-
+      partial('_partial/github-link') %> <% } %>
+    </nav>
+  </header>
+  
