@@ -521,7 +521,7 @@ footer hr {
   max-width: 94vw;
 }
 .slide-container {
-  box-shadow: -2px 2px 3px 1px rgba(128, 128, 128, 0.3);
+  border-bottom: 1px solid #f2f2f2;
 }
 .slide-container .swiper {
   height: 60px;
