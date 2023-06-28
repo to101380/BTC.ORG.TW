@@ -55,7 +55,7 @@
         <% Object.keys(theme.menu).forEach(function(key) { %>
           <li class="hide-on-med-and-up nav-item">
             <% if(!theme.menu[key].children) { %>
-            <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold">
+            <a href="<%- url_for(theme.menu[key].url) %>" class="waves-effect waves-light black-text bold" style="line-height: 100%;">
               <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
               <i class="<%- theme.menu[key].icon %>" style="zoom: 0.6;"></i>
               <% } %>
@@ -85,7 +85,9 @@
             <% } %>
           </li>
           <% }); %>
-        <div class="col s12 m4 l4 social-link hide-on-med-and-up nav-item"><%- partial('_partial/social-link') %></div>
+
+          <!-- 各種社群 icon -->
+        <!-- <div class="col s12 m4 l4 social-link hide-on-med-and-up nav-item"><%- partial('_partial/social-link') %></div> -->
 
       </ul>
     </li>
@@ -97,7 +99,7 @@
 	</div>
 
   </ul>
-
+  <hr style="border-top: 0px; margin: 0px;width: 100%; border-bottom: 1px solid #f2f2f2; position: absolute; left: 0px;">
         
 </div>
 <%- partial('_partial/mobile-nav') %>

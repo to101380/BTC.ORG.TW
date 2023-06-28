@@ -7,7 +7,6 @@ menu:
     url: /buybitcoin
   關鍵字:
     url: /topic   
-  
     
 bottomMenu: 
   合作夥伴:
@@ -15,7 +14,7 @@ bottomMenu:
   免責申明:
     url: /disclaimer
   隱私政策:
-    url: /about
+    url: /privatepolicy 
 
   # 二级菜单写法如下
   #Medias:

@@ -18,7 +18,7 @@
     <!--標籤文章卡片-->
     <article id="articles" class="container articles">
         <!--現在位置-->
-        <p class="url-now">關鍵字 &gt; <%- page.tag %></p>
+        <p class="url-now">關鍵字 &gt;</p>
         <div class="author-block">
             <h1 class="author-name"><%- page.tag %></h1>
         </div>
@@ -56,7 +56,7 @@
                     <div class="card-content article-content col s12 m7">
                         <div class="publish-info">
                             <!-- 標題 -->                                    
-                            <p class="card-title"><%= post.title %></p>
+                            <h1 class="card-title"><%= post.title %></h1>
                             <!-- 作者 -->
                             <span class="publish-author">
                                 <% if (post.categories && post.categories.length > 0) { %>

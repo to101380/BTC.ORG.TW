@@ -454,7 +454,7 @@ footer hr {
 
 /*nav*/
 .nav {
-  border-bottom: 1px solid #f2f2f2;
+  /* border-bottom: 1px solid #f2f2f2; */
 }
 .nav-menu {
   padding-top: 20px;
@@ -486,6 +486,7 @@ footer hr {
   margin-top: 30px;
   margin-bottom: 40px;
 }
+
 .nav .nav-menu i {
   height: auto;
   font-size: 25px;
@@ -518,7 +519,7 @@ footer hr {
   color: black;
   clear: both;
   min-height: 5vh;
-  max-width: 94vw;
+  /* max-width: 94vw; */
 }
 .slide-container {
   border-bottom: 1px solid #f2f2f2;

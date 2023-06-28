@@ -113,7 +113,7 @@
                                     <div class="swiper-slide">
                                         <span id="name-<%= i %>" ></span>
                                         <span id="price-<%= i %>"></span>
-                                        <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i> 
+                                        <!-- <i id="price-<%= i %>_gain_img" class="fa-solid text-darken-3 "></i>  -->
                                         <span id="price-<%= i %>_gain_text" class="text-darken-3"> 
                                             <span id="price-<%= i %>_gain"></span>
                                         </span>
@@ -197,16 +197,16 @@
                                             gain = Math.round((gain + Number.EPSILON) * 100)/100;
                                             console.log(gain)
                                             if (gain > 0){
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-up");
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("green-text");
+                                                // document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-up");
+                                                // document.getElementById(`price-${i+1}_gain_img`).classList.add("green-text");
                                                 document.getElementById(`price-${i+1}_gain_text`).classList.add("green-text");
                                                                                                     
                                             } else if (gain == 0){
 
                                             }
                                             else{
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-down");
-                                                document.getElementById(`price-${i+1}_gain_img`).classList.add("red-text");
+                                                // document.getElementById(`price-${i+1}_gain_img`).classList.add("fa-caret-down");
+                                                // document.getElementById(`price-${i+1}_gain_img`).classList.add("red-text");
                                                 document.getElementById(`price-${i+1}_gain_text`).classList.add("red-text");
                                                 gain *= -1;
                                             }                                    

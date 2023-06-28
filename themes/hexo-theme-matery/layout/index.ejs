@@ -70,7 +70,7 @@
             <% } %>
             <% page.posts.forEach((post,index) => { %>
                 <% if (post.hide != true)  { %> <!-- 隐藏某个文章 -->
-                    <div class="article-main-post col s12 m12 l4" >
+                    <div class="article-main-post col s12 m12 l4">
                         <a href="<%- url_for(post.path) %>">
                             <!-- 照片 -->
                             <div class="card-image col s12 m5">
@@ -89,65 +89,67 @@
                                 <% } %>
                             </div>
                             <!-- 資訊 -->
-                            <div class="card-content article-content col s12 m7">
+                            <div class="card-content article-content col s12 m7" style="position: relative;">
                                 <div class="publish-info">
                                     <!-- 標題 -->                                    
                                     <p class="card-title"><%= post.title %></p>
-                                    <!-- 作者 -->
-                                    <span class="publish-author">
-                                        <% if (post.categories && post.categories.length > 0) { %>
-                                        <% post.categories.forEach(category => { %>
-                                        <a href="<%- url_for(category.path) %>" class="post-category">
-                                            <%- category.name %>
-                                        </a>
-                                        <% }); %>
-                                        <% } else if (post.authorId && post.authorId.length > 0) { %>
-                                        <a href="/author/<%- post.authorId %>" class="author-link">
-                                            <%- post.authorId %>
-                                        </a>
-                                        <% } else { %>
-                                        <%- config.author %>
-                                        <% } %>
-                                    </span><br>
-                                    <!-- 日期 -->
-                                    <span class="publish-date">
-                                        <%= date(post.date, config.date_format) %>
-                                    </span><br>
-                                    <!-- 文章摘要 -->
-                                    <div class="summary">
-                                        <% if (post.summary && post.summary.length > 0) { %>
-                                            <%- post.summary %>...
-                                        <% } else if (post.excerpt && post.excerpt.length > 0) { %>
-                                            <%- strip_html(post.excerpt).substring(0, 120) %>
-                                        <% } else if (post.content && post.content.length > 0) { %>
-                                            <%- strip_html(post.content).substring(0, 120) %>
+                                    <div style="position: absolute; width: 93%; bottom: 0px;">
+                                        <!-- 作者 -->
+                                        <span class="publish-author">
+                                            <% if (post.categories && post.categories.length > 0) { %>
+                                            <% post.categories.forEach(category => { %>
+                                            <a href="<%- url_for(category.path) %>" class="post-category">
+                                                <%- category.name %>
+                                            </a>
+                                            <% }); %>
+                                            <% } else if (post.authorId && post.authorId.length > 0) { %>
+                                            <a href="/author/<%- post.authorId %>" class="author-link">
+                                                <%- post.authorId %>
+                                            </a>
+                                            <% } else { %>
+                                            <%- config.author %>
+                                            <% } %>
+                                        </span><br>
+                                        <!-- 日期 -->
+                                        <span class="publish-date">
+                                            <%= date(post.date, config.date_format) %>
+                                        </span><br>
+                                        <!-- 文章摘要 -->
+                                        <div class="summary">
+                                            <% if (post.summary && post.summary.length > 0) { %>
+                                                <%- post.summary %>...
+                                            <% } else if (post.excerpt && post.excerpt.length > 0) { %>
+                                                <%- strip_html(post.excerpt).substring(0, 120) %>
+                                            <% } else if (post.content && post.content.length > 0) { %>
+                                                <%- strip_html(post.content).substring(0, 120) %>
+                                            <% } %>
+                                        </div>
+                                        <!-- 關鍵字 -->
+                                        <!--index文章若超過5個tags取前五顯示-->
+                                        <% 
+                                            let fiveTags=post.tags.filter((tag,index,arr) => {
+                                            return index < 3
+                                            })
+                                        %>
+                                        <% if(post.tags && post.tags.length < 6) { %>
+                                            <div class="card-action article-tags">
+                                                <% post.tags.forEach(tag => { %>
+                                                <a href="<%- url_for(tag.path) %>">
+                                                    <span class="black-text">#<%= tag.name %></span>
+                                                </a>
+                                                <% }); %>
+                                            </div>
+                                        <% } else{ %>
+                                            <div class="card-action article-tags">
+                                                <% fiveTags.forEach(tag => { %>
+                                                <a href="<%- url_for(tag.path) %>">
+                                                    <span class="black-text">#<%= tag.name %></span>
+                                                </a>
+                                                <% }); %>
+                                                <span>...</span>
+                                            </div>
                                         <% } %>
                                     </div>
-                                    <!-- 關鍵字 -->
-                                    <!--index文章若超過5個tags取前五顯示-->
-                                    <% 
-                                        let fiveTags=post.tags.filter((tag,index,arr) => {
-                                        return index < 3
-                                        })
-                                     %>
-                                    <% if(post.tags && post.tags.length < 6) { %>
-                                        <div class="card-action article-tags">
-                                            <% post.tags.forEach(tag => { %>
-                                            <a href="<%- url_for(tag.path) %>">
-                                                <span class="black-text">#<%= tag.name %></span>
-                                            </a>
-                                            <% }); %>
-                                        </div>
-                                    <% } else{ %>
-                                        <div class="card-action article-tags">
-                                            <% fiveTags.forEach(tag => { %>
-                                            <a href="<%- url_for(tag.path) %>">
-                                                <span class="black-text">#<%= tag.name %></span>
-                                            </a>
-                                            <% }); %>
-                                            <span>...</span>
-                                        </div>
-                                    <% } %>
                                 </div>
                             </div>
                         </a>
