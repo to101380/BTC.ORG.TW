@@ -93,7 +93,7 @@
                                 <div class="publish-info">
                                     <!-- 標題 -->                                    
                                     <p class="card-title"><%= post.title %></p>
-                                    <div style="position: absolute; width: 93%; bottom: 0px;">
+                                    <div style="position: absolute; width: 93%; top: 45px;">
                                         <!-- 作者 -->
                                         <span class="publish-author">
                                             <% if (post.categories && post.categories.length > 0) { %>
@@ -124,7 +124,9 @@
                                                 <%- strip_html(post.content).substring(0, 120) %>
                                             <% } %>
                                         </div>
-                                        <!-- 關鍵字 -->
+                                        
+                                    </div>
+                                    <!-- 關鍵字 -->
                                         <!--index文章若超過5個tags取前五顯示-->
                                         <% 
                                             let fiveTags=post.tags.filter((tag,index,arr) => {
@@ -132,7 +134,7 @@
                                             })
                                         %>
                                         <% if(post.tags && post.tags.length < 6) { %>
-                                            <div class="card-action article-tags">
+                                            <div class="card-action article-tags" style="position: absolute; bottom: 0px;">
                                                 <% post.tags.forEach(tag => { %>
                                                 <a href="<%- url_for(tag.path) %>">
                                                     <span class="black-text">#<%= tag.name %></span>
@@ -140,7 +142,7 @@
                                                 <% }); %>
                                             </div>
                                         <% } else{ %>
-                                            <div class="card-action article-tags">
+                                            <div class="card-action article-tags" style="position: absolute; bottom: 0px;">
                                                 <% fiveTags.forEach(tag => { %>
                                                 <a href="<%- url_for(tag.path) %>">
                                                     <span class="black-text">#<%= tag.name %></span>
@@ -149,7 +151,6 @@
                                                 <span>...</span>
                                             </div>
                                         <% } %>
-                                    </div>
                                 </div>
                             </div>
                         </a>
