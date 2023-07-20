@@ -4,6 +4,52 @@
   
     
     <entry>
+      <title>專有名詞 - 時間鏈</title>
+      <link href="/2023/07/16/post001/"/>
+      <url>/2023/07/16/post001/</url>
+      
+        <content type="html"><![CDATA[<h4 id="專有名詞-時間鏈"><a href="#專有名詞-時間鏈" class="headerlink" title="專有名詞 - 時間鏈"></a>專有名詞 - 時間鏈</h4><p>【Timechain - 時間鏈】<br>時間鏈是中本聰最初對比特幣的稱呼，區塊鏈的原始名稱。<br><br>　　<br>時間鏈一詞源自比特幣預發布代碼中的註釋<br>❏ 2008 年 11 月 16 日比特幣預發布代碼中的一段註釋，中本聰用具體的術語將比特幣稱作「時間鏈」，用以識別比特幣的底層技術，該代碼早於 2009 年 01 月 03 日的創世區塊。<br><br>　　<br>代碼來源及公開<br>❏ 2008 年 11 月 17 日，中本聰於密碼學郵件列表（Cryptography Mailing List, 即 Metzdowd 網站）表示已將比特幣主要文件發給 James A. Donald，而源代碼即將推出。<br>❏ 2013 年 12 月 23 日，比特幣預發布（Pre-Release）代碼在比特幣對話論壇（bitcointalk）被公開，用戶 Cryddit 表示自己和 Hal Finney 於 2008 年 11 月 16 日，分別收到了中本聰寄來的比特幣預發布源代碼，理由是中本聰於密碼學郵件列表要求專業的加密極客（geeks）審查比特幣。<br><br>　　<br>相關人物列表</p><ol><li>中本聰（Satoshi Nakamoto）是比特幣的發明者，其真實身分不明。</li><li>詹姆斯 A. 唐納德（James A. Donald）是密碼學郵件列表中首位與中本聰聯繫的人。</li><li>哈爾·芬尼（Hal Finney）是美國密碼學家、軟體工程師及比特幣先驅，於 2014 年 08 月 28 日因為肌萎縮性脊髓側索硬化症（Amyotrophic lateral sclerosis, ALS） 的併發症在亞利桑那州鳳凰城逝世，享年 58 歲。</li><li>Cryddit 是在比特幣對話論壇公開比特幣預發布代碼的用戶，在時間軸上呼應了中本聰於密碼學郵件列表發送比特幣主要文件的人；論壇用戶 deepceleron 引用中本聰於密碼學郵件列表的內文，引喻 Cryddit 就是 James A. Donald。<br><br>　　<br>參考文獻：</li><li>Metzdowd - “Bitcoin P2P e-cash paper.” Retrieved from：<a href="https://www.metzdowd.com/pipermail/cryptography/2008-November/014863.html">https://www.metzdowd.com/pipermail/cryptography/2008-November/014863.html</a></li><li>bitcointalk - “Bitcoin source from November 2008.” Post by Cryddit：<a href="https://bitcointalk.org/index.php?topic=382374.0">https://bitcointalk.org/index.php?topic=382374.0</a></li><li>bitcointalk - “Bitcoin source from November 2008.” Cited by deepceleron：<a href="https://bitcointalk.org/index.php?topic=382374.msg4109163#msg4109163">https://bitcointalk.org/index.php?topic=382374.msg4109163#msg4109163</a></li><li>Hal Finney - Wikipedia. Retrieved from：<a href="https://en.wikipedia.org/wiki/Hal_Finney_(computer_scientist)">https://en.wikipedia.org/wiki/Hal_Finney_(computer_scientist)</a></li><li>“Bitcoin Pre-Release.” Retrieved from：<a href="https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-nov08.tgz">https://s3.amazonaws.com/nakamotoinstitute/code/bitcoin-nov08.tgz</a></li></ol><p>　　</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 比特幣 </tag>
+            
+            <tag> Bitcoin </tag>
+            
+            <tag> 時間鏈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>專有名詞 - BIP 比特幣改進建議</title>
+      <link href="/2023/07/16/post002/"/>
+      <url>/2023/07/16/post002/</url>
+      
+        <content type="html"><![CDATA[<h4 id="專有名詞-BIP-比特幣改進建議"><a href="#專有名詞-BIP-比特幣改進建議" class="headerlink" title="專有名詞 - BIP 比特幣改進建議"></a>專有名詞 - BIP 比特幣改進建議</h4><h5 id="比特幣社區的成員們提交一套改進比特幣的提議。"><a href="#比特幣社區的成員們提交一套改進比特幣的提議。" class="headerlink" title="比特幣社區的成員們提交一套改進比特幣的提議。"></a>比特幣社區的成員們提交一套改進比特幣的提議。</h5><p><br>　　<br>例如：BIP-21 提議改進比特幣統一資源標識（URI）方案。<br>比特幣改進建議（Bitcoin Improvement Proposals, BIPs）：<a href="https://github.com/bitcoin/bips">https://github.com/bitcoin/bips</a><br><br>　　<br>BIP 類型分為三種（BIP-01：BIP 目的和指南）規定</p><ol><li>標準類 BIP（Standards Track BIP）：描述影響大多數或所有比特幣系統的任何修改，例如網路協議的修改、區塊或交易有效性規則的修改，或者影響使用比特幣的應用程式的互操作性的任何更改或優化。<br><br></li><li>信息類 BIP（Informational BIP）：描述比特幣設計問題，或向比特幣社區提供一般指南或信息，但不提出新功能。信息類 BIP 不一定代表比特幣社區的共識或建議，因此用戶和實施者可以自由地忽略信息 BIP 或遵循他們的建議。<br><br></li><li>程序類 BIP（Process BIP）：描述了圍繞比特幣的程序，或提議對程序（或程序中的事件）進行更改。程序類 BIPs 類似標準類 BIPs，但適用於比特幣協議本身以外的領域。他們可能會提出一個實施方案，但不是比特幣的代碼庫，且通常需要社區達成共識；與信息類 BIP 不同，它們不僅僅是建議，用戶通常不能隨意忽略它們。例如包括程序、指南、決策過程的更改以及比特幣開發中使用的工具或環境的更改。任何 meta-BIP 也被視為程序 BIP。<br><br></li></ol><p>　　</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 比特幣 </tag>
+            
+            <tag> Bitcoin </tag>
+            
+            <tag> BIP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>什麼是 Pizza Day</title>
       <link href="/2023/05/22/%E6%96%87%E7%AB%A0%E4%B8%89%E8%99%9F/"/>
       <url>/2023/05/22/%E6%96%87%E7%AB%A0%E4%B8%89%E8%99%9F/</url>
@@ -63,29 +109,6 @@
             <tag> SHA256 </tag>
             
             <tag> 演算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>從 J 粒子到宇宙射線：丁肇中的實驗物理之旅</title>
-      <link href="/2023/05/22/%E6%96%87%E7%AB%A0%E5%85%AB%E8%99%9F/"/>
-      <url>/2023/05/22/%E6%96%87%E7%AB%A0%E5%85%AB%E8%99%9F/</url>
-      
-        <content type="html"><![CDATA[<h4 id="專家結論不一定是對的：證明電子沒有體積"><a href="#專家結論不一定是對的：證明電子沒有體積" class="headerlink" title="專家結論不一定是對的：證明電子沒有體積"></a>專家結論不一定是對的：證明電子沒有體積</h4><br><blockquote><p>1965 年丁肇中前往德國的大型粒子物理學研究機構「德國電子加速器」（DESY）進行第一個實驗工作，目的是證明「電子沒有體積」。為什麼要做這個實驗呢？因為當時科學家對電子有無體積的問題出現了爭議。<br><br></p></blockquote><p>當時正經歷了一次比特幣的大跌，發帖者正在喝酒的狀態而打錯了字，但依然撰寫了這篇很有情緒意義的文章．表示自己是一個非常糟糕的交易員，但是他會以繼續長期持有比特幣作為他的交易策略，對比特幣的未來保持樂觀．</p><p>這個詞後來變得非常流行，並成為一種象徵性的口號，代表了在加密貨幣市場上堅持持有的心態。<br><br></p><p>「實驗是自然科學的基礎，理論如果沒有實驗的證明，是沒有意義的。當實驗推翻了理論後，才可能創建新的理論；理論是不可能推翻實驗的。過去 400 年來，我們對物質基本結構的了解，大都來自於實驗物理。」中研院物理所於 2022 年 12 月 27 日舉辦了李水清講座，邀請到著名的實驗物理學家丁肇中，他以這段話做為整場講座的開端。</p><p>從丁肇中踏上實驗物理之路開始，至今已有 60 多年，這一路走來，丁肇中累積了許多突破性的成果，這些經歷也讓他獲得了豐富的人生體會。在這場講座中，丁肇中以「我所經歷的現代物理和我的體會」為題，一一細數這些成果及體會，在言談中展露出他對物理的熱情、堅持，以及永不磨滅的興趣與好奇心。</p><p><img src="https://img.natgeomedia.com/userfiles/sm/sm1920_images_A1/16332/2023060602655260.jpg"></p><h4 id="專家結論不一定是對的：證明電子沒有體積-1"><a href="#專家結論不一定是對的：證明電子沒有體積-1" class="headerlink" title="專家結論不一定是對的：證明電子沒有體積"></a>專家結論不一定是對的：證明電子沒有體積</h4><p>1965 年丁肇中前往德國的大型粒子物理學研究機構「德國電子加速器」（DESY）進行第一個實驗工作，目的是證明「電子沒有體積」。為什麼要做這個實驗呢？因為當時科學家對電子有無體積的問題出現了爭議。</p><p>ADads-parallax<br>根據理查·費曼（Richard Feynman） 、朱利安·施溫格（Julian Schwinger）和朝永振一郎在 1948 年提出的量子電動力學理論（Quantum Electrodynamics，簡稱 QED），電子是沒有體積的，當時所有的實驗都證明了 QED 理論的完備性，他們三人也因此獲得 1965 年的諾貝爾物理獎。</p><p>可是在1964年時，哈佛大學和康乃爾大學的科學家和專家耗費多年心思，進行兩個不同的實驗，卻得出與 QED 相反的結論——量子電動力學是錯誤的，電子是有體積的，半徑是 10-13～10-14 公分。這個結論是兩個不同實驗團隊的成果，也因此受到物理界人士的認可和重視。</p><p>當時剛獲得博士學位的丁肇中，決定用不同方法來測量電子半徑。丁肇中回憶：「那個時候沒有人相信我能做出這個實驗，更沒有人支援我。」所以在 1965 年，丁肇中決定離開美國，到德國新建的 DESY，利用這個周長 320 公尺的加速器，產生能量 75 億電子伏特的光，打到儀器上，以測量電子的半徑。</p><p>在德國八個月後，丁肇中的實驗結果證明量子電動力學是正確的：電子真的沒有體積，它的半徑小於 10-14 公分。我們可以說：在當年實驗可及的範圍內，電子半徑為零（consistent with zero）。這推翻了當初康乃爾大學與哈佛大學備受重視的實驗結果。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 比特幣 </tag>
-            
-            <tag> HODL </tag>
-            
-            <tag> Meme </tag>
             
         </tags>
       
