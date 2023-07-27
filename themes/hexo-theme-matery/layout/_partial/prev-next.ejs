@@ -34,13 +34,12 @@ var hash = 0; for (var i = 0, len = str.length; i < len; i++) { hash = ((hash <<
             <% } %>
           </div>
           <!-- 資料 -->
-          <div class="card-content article-content col s12 m7">
+          <div class="card-content article-content col s12 m7" style="position: relative;">
             <div class="publish-info">
               <!-- 標題 -->
-              <span class="card-title"><%= page.prev.title %></span>
-              <br />
+              <p class="card-title"><%= page.prev.title %></p>
               <!-- 作者 -->
-              <span class="publish-author">
+              <span class="publish-author" style="position: absolute; width: 93%; top: 45px;">
                 <% if (page.prev.categories && page.prev.categories.length > 0)
                 { %> <% page.prev.categories.forEach(category => { %>
                 <a href="<%- url_for(category.path) %>" class="post-category">
@@ -49,21 +48,21 @@ var hash = 0; for (var i = 0, len = str.length; i < len; i++) { hash = ((hash <<
                 <% }); %> <% } else if (page.prev.authorId &&
                 page.prev.authorId.length > 0) { %> <%- page.prev.authorId %> <%
                 } else { %> <%- config.authorId %> <% } %>
+                <br />
+                <!-- 日期 -->
+                <span class="publish-date">
+                  <%= date(page.prev.date, config.date_format) %>
+                </span>
+                <!-- 摘要 -->
+                <div class="summary block-with-text">
+                  <% if (page.prev.summary && page.prev.summary.length > 0) { %>
+                  <%- page.prev.summary %> <% } else { %> <%-
+                  strip_html(page.prev.excerpt).substring(0, 120) %> <% } %>
+                </div>
               </span>
-              <br />
-              <!-- 日期 -->
-              <span class="publish-date">
-                <%= date(page.prev.date, config.date_format) %>
-              </span>
-              <!-- 摘要 -->
-              <div class="summary block-with-text">
-                <% if (page.prev.summary && page.prev.summary.length > 0) { %>
-                <%- page.prev.summary %> <% } else { %> <%-
-                strip_html(page.prev.excerpt).substring(0, 120) %> <% } %>
-              </div>
               <!-- 標籤 -->
               <% if(page.prev.tags && page.prev.tags.length > 0) { %>
-              <div class="card-action article-tags">
+              <div class="card-action article-tags" style="position: absolute; bottom: 0px;">
                 <% page.prev.tags.forEach(tag => { %>
                 <a href="<%- url_for(tag.path) %>">
                   <span class="">#<%= tag.name %></span>
@@ -97,13 +96,13 @@ var hash = 0; for (var i = 0, len = str.length; i < len; i++) { hash = ((hash <<
             <% } %>
           </div>
           <!-- 資料 -->
-          <div class="card-content article-content col s12 m7">
+          <div class="card-content article-content col s12 m7" style="position: relative;">
             <div class="publish-info">
               <!-- 標題 -->
               <span class="card-title"><%= page.next.title %></span>
               <br />
               <!-- 作者 -->
-              <span class="publish-author">
+              <span class="publish-author" style="position: absolute; width: 93%; top: 45px;">
                 <% if (page.next.categories && page.next.categories.length > 0)
                 { %>
                 <!-- <i class="fas fa-bookmark fa-fw icon-category"></i> -->
@@ -117,23 +116,23 @@ var hash = 0; for (var i = 0, len = str.length; i < len; i++) { hash = ((hash <<
                 <%- page.next.authorId %> <% } else { %>
                 <!-- <i class="fas fa-user fa-fw"></i> -->
                 <%- config.author %> <% } %>
+                <br />
+                <!-- 日期 -->
+                <span class="publish-date">
+                  <%= date(page.next.date, config.date_format) %>
+                </span>
+                <br />
+                <!-- 摘要 -->
+                <div class="summary block-with-text">
+                  <% if (page.next.summary && page.next.summary.length > 0) { %>
+                  <%- page.next.summary %> <% } else { %> <%-
+                  strip_html(page.next.excerpt).substring(0, 120) %> <% } %>
+                </div>
               </span>
-              <br />
-              <!-- 日期 -->
-              <span class="publish-date">
-                <%= date(page.next.date, config.date_format) %>
-              </span>
-              <br />
-              <!-- 摘要 -->
-              <div class="summary block-with-text">
-                <% if (page.next.summary && page.next.summary.length > 0) { %>
-                <%- page.next.summary %> <% } else { %> <%-
-                strip_html(page.next.excerpt).substring(0, 120) %> <% } %>
-              </div>
               <!-- <br> -->
               <!-- 標籤 -->
               <% if(page.next.tags && page.next.tags.length > 0) { %>
-              <div class="card-action article-tags">
+              <div class="card-action article-tags" style="position: absolute; bottom: 0px;">
                 <% page.next.tags.forEach(tag => { %>
                 <a href="<%- url_for(tag.path) %>">
                   <span class="">#<%= tag.name %></span>
